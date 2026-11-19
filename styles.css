@@ -1,0 +1,93 @@
+body {
+    background: #100015;
+    color: pink;
+    text-align: center;
+    font-family: Arial;
+    overflow: hidden;
+    padding-top: 60px;
+}
+
+h1 {
+    color: #ff8fcf;
+    font-size: 28px;
+}
+
+.heart-container {
+    width: 220px;
+    height: 220px;
+    position: relative;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: beat 1s infinite;
+}
+
+.heart {
+    width: 110px;
+    height: 110px;
+    background: linear-gradient(
+        135deg,
+        #ff1493,
+        #ff69b4
+    );
+
+    position: absolute;
+    top: 55px;
+    left: 55px;
+
+    transform: rotate(-45deg);
+
+    box-shadow: 0 0 30px #ff1493;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 110px;
+    height: 110px;
+    background: inherit;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -55px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 55px;
+}
+
+.name {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-size: 27px;
+    font-weight: bold;
+    text-shadow: 0 0 10px white;
+}
+
+@keyframes beat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+p {
+    color: #ff8fcf;
+    font-size: 25px;
+    margin-top: 20px;
+}
